@@ -186,12 +186,14 @@ function loadVersionContent(version) {
   const versionSelect = document.getElementById('version-select');
   const latestVersion = versionSelect ? versionSelect.getAttribute('data-latest-version') : null;
   
+  const basePath = window.location.pathname.includes('/privacy-hub/') ? '/privacy-hub' : '';
+  
   let newUrl;
   if (version === latestVersion) {
-    newUrl = `/notices/${app}/${lang}/`;
+    newUrl = `${basePath}/notices/${app}/${lang}/`;
   } else {
     const cleanVersion = version.startsWith('v') ? version.substring(1) : version;
-    newUrl = `/notices/${app}/${lang}/archive/${cleanVersion}/`;
+    newUrl = `${basePath}/notices/${app}/${lang}/archive/${cleanVersion}/`;
   }
   
   if (currentPath === newUrl || currentPath === newUrl + '/') {
