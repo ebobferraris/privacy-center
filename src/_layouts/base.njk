@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if title %}{{ title }} - {% endif %}{{ 'ui.companyName' | t(lang) }}</title>
+  <link rel="preload" href="{{ '/js/translations.js' | url }}" as="script">
+  <link rel="preload" href="{{ '/js/main.js' | url }}" as="script">
   <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
   <script src="{{ '/js/translations.js' | url }}"></script>
   <script src="{{ '/js/main.js' | url }}"></script>
