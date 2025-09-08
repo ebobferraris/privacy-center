@@ -1,6 +1,6 @@
 /**
  * Eleventy Configuration
- * Modular configuration for Privacy Hub static site generator
+ * Modular configuration for Privacy Center static site generator
  */
 
 // Import modular configurations
@@ -41,7 +41,7 @@ module.exports = function(eleventyConfig) {
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
-    pathPrefix: process.env.NODE_ENV === 'development' ? '' : '/privacy-hub/'
+    pathPrefix: process.env.NODE_ENV === 'development' ? '' : '/privacy-center/'
   };
 };
 

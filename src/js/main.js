@@ -239,7 +239,7 @@ function changeLanguage(lang) {
 
     // Check if we're on the home page (server-side translated pages)
     const currentPath = window.location.pathname;
-    const basePath = window.location.pathname.includes('/privacy-hub/') ? '/privacy-hub' : '';
+    const basePath = window.location.pathname.includes('/privacy-center/') ? '/privacy-center' : '';
     
     const homePagePatterns = [
       basePath + '/',
