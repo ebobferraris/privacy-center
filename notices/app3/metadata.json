@@ -2,7 +2,10 @@
   "name": "App3",
   "description": "Description of App3",
   "languages": {
-    "it": ["1.0"]
+    "it": [
+      "1.1",
+      "1.0"
+    ]
   },
   "main_language": "it",
   "versions": [
