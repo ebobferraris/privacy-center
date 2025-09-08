@@ -59,7 +59,6 @@ function loadNotice(dir, noticesDir) {
     main_language: metadata.main_language || 'it',
     languages: Object.keys(availableLanguages),
     available_languages: availableLanguages,
-    versions: metadata.versions || []
   };
 }
 
