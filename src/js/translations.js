@@ -521,7 +521,6 @@ langManager.subscribe((newLang) => {
 
 // Initialize translations on page load
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM loaded, initializing translations...');
   
   // Wait a bit to ensure all scripts are loaded
   setTimeout(() => {
@@ -581,7 +580,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
       
-      console.log('Initial translations applied');
     } catch (error) {
       console.error('Error applying initial translations:', error);
     }
@@ -646,10 +644,7 @@ window.updateAllTranslatableElements = function() {
       }
     });
     
-    console.log('All translatable elements updated');
   } catch (error) {
     console.error('Error updating all translatable elements:', error);
   }
 };
-
-console.log('✅ Language system initialized with', Object.keys(translations).length, 'languages');
