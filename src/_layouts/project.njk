@@ -5,8 +5,9 @@ eleventyComputed:
   permalink: "/notices/{{ project }}/index.html"
 ---
 
-{% set noticeData = project %}
+{% set noticeId = project %}
 {% set currentLang = lang %}
+{% set noticeData = notices | findNotice(noticeId) %}
 
 <div class="notice-header">
   <h1>{{ noticeData.name }} - <span data-translate="ui.privacyNotice">{{ 'ui.privacyNotice' | t(lang) }}</span></h1>
