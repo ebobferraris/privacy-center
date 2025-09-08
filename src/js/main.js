@@ -186,8 +186,7 @@ function loadVersionContent(version) {
   const versionSelect = document.getElementById('version-select');
   const latestVersion = versionSelect ? versionSelect.getAttribute('data-latest-version') : null;
   
-  const currentPath = window.location.pathname;
-  const basePath = currentPath.startsWith('/privacy-center') ? '/privacy-center' : '';
+  const basePath = currentPath.startsWith('/privacy-hub') ? '/privacy-hub' : '';
   
   let newUrl;
   if (version === latestVersion) {
