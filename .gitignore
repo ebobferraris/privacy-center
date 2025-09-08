@@ -1,0 +1,15 @@
+node_modules/
+_site/
+_site-old/
+.DS_Store
+
+# SBOM files
+sbom.json
+sbom.spdx
+sbom-summary.md
+
+# Documentation
+DEPENDENCY-MAINTENANCE.md
+README-backup.md
+README.md
+docs/

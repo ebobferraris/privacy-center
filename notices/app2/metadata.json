@@ -1,0 +1,12 @@
+{
+  "name": "App2",
+  "description": "Description of App2",
+  "languages": {
+    "it": ["1.0"],
+    "en": ["1.0"]
+  },
+  "main_language": "it",
+  "versions": [
+    "1.0"
+  ]
+}

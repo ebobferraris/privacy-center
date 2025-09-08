@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{ lang | default('it') }}">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} - {% endif %}{{ 'ui.companyName' | t(lang) }}</title>
+  <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1><a href="{{ '/' | url }}">{{ 'ui.companyName' | t(lang) }}</a></h1>
+      <div id="language-dropdown" class="language-dropdown">
+        <button class="language-button" onclick="toggleLanguageDropdown()">
+          <span class="current-lang" data-translate="ui.currentLang">
+            {% if lang == 'it' %}🇮🇹 IT{% elif lang == 'en' %}🇬🇧 EN{% elif lang == 'fr' %}🇫🇷 FR{% elif lang == 'de' %}🇩🇪 DE{% elif lang == 'sl' %}🇸🇮 SL{% else %}🇮🇹 IT{% endif %}
+          </span>
+          <span class="dropdown-arrow">▼</span>
+        </button>
+        <div id="language-menu" class="language-menu">
+          {% set availableLanguages = ['it', 'en', 'fr', 'de', 'sl'] | orderLanguages %}
+          {% for langCode in availableLanguages %}
+            <a href="#" class="language-item" onclick="changeLanguage('{{ langCode }}'); return false;">
+              {% if langCode == 'it' %}🇮🇹{% elif langCode == 'en' %}🇬🇧{% elif langCode == 'fr' %}🇫🇷{% elif langCode == 'de' %}🇩🇪{% elif langCode == 'sl' %}🇸🇮{% endif %} {{ langCode | getLanguageName }} ({{ langCode | upper }})
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      {{ content | safe }}
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 {{ 'ui.companyName' | t(lang) }}. {{ 'ui.copyright' | t(lang) }}</p>
+    </div>
+  </footer>
+
+              <script src="{{ '/js/translations.js' | url }}" defer></script>
+              <script src="{{ '/js/main.js' | url }}" defer></script>
+</body>
+</html>

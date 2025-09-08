@@ -1,0 +1,52 @@
+{
+  "ui": {
+    "companyName": "PPE Corp.",
+    "copyright": "Tous droits réservés.",
+    "privacyCenter": "Privacy Center",
+    "subtitle": "ici vous pouvez trouver les notices de confidentialité de tous nos produits",
+    "backToHome": "← Retour à l'accueil",
+    "selectLanguage": "Sélectionnez une langue",
+    "chooseLanguage": "Choisissez la langue dans laquelle vous souhaitez consulter l'avis de confidentialité {app} :",
+    "mainLanguage": "Langue principale",
+    "translation": "Traduction",
+    "viewInItalian": "Voir en italien",
+    "viewInEnglish": "Voir en anglais",
+    "viewInFrench": "Voir en français",
+    "viewInGerman": "Voir en allemand",
+    "viewInSlovenian": "Voir en slovène",
+    "viewInIt": "Voir en Italien",
+    "viewInEn": "Voir en Anglais",
+    "viewInFr": "Voir en Français",
+    "viewInDe": "Voir en Allemand",
+    "viewInSl": "Voir en Slovène",
+    "currentLang": "🇫🇷 FR",
+    "searchPlaceholder": "Rechercher des avis...",
+    "search": "Rechercher",
+    "read": "Lire",
+    "privacyNotice": "Avis de confidentialité",
+    "version": "Version",
+    "latest": "dernière",
+    "lastUpdated": "Dernière mise à jour: {date}",
+    "whatsNew": "Nouveautés dans la version {version}",
+    "contentNotAvailable": "Contenu de l'avis non disponible.",
+    "availablePrivacyNotices": "Avis de Confidentialité Disponibles",
+    "archivedVersion": "Version Archivée {version}",
+    "archivedVersionText": "Ceci est une version archivée de l'avis de confidentialité. Voir la dernière version",
+    "viewLatestVersion": "Voir la dernière version",
+    "outdatedTranslation": "Traduction Obsolète",
+    "outdatedTranslationText": "Cette traduction est basée sur une version plus ancienne que la version italienne. Voir la dernière version italienne",
+    "viewLatestItalianVersion": "Voir la dernière version italienne",
+    "latestVersion": "{version} (dernière)"
+  },
+  "warnings": {
+    "translationUnavailable": "Traduction non disponible",
+    "translationUnavailableDesc": "La traduction demandée n'est pas encore disponible. Vous trouverez ci-dessous les versions linguistiques actuellement disponibles pour cette notice."
+  },
+  "languages": {
+    "it": "Italiano",
+    "en": "English",
+    "fr": "Français",
+    "de": "Deutsch",
+    "sl": "Slovenščina"
+  }
+}

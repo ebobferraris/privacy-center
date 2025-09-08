@@ -1,0 +1,52 @@
+{
+  "ui": {
+    "companyName": "PPE Corp.",
+    "copyright": "All rights reserved.",
+    "privacyCenter": "Privacy Center",
+    "subtitle": "here you can find the privacy notices of all our products",
+    "backToHome": "← Back to home",
+    "selectLanguage": "Select a language",
+    "chooseLanguage": "Choose the language in which you want to view the {app} privacy notice:",
+    "mainLanguage": "Main language",
+    "translation": "Translation",
+    "viewInItalian": "View in Italian",
+    "viewInEnglish": "View in English",
+    "viewInFrench": "View in French",
+    "viewInGerman": "View in German",
+    "viewInSlovenian": "View in Slovenian",
+    "viewInIt": "View in Italian",
+    "viewInEn": "View in English",
+    "viewInFr": "View in French",
+    "viewInDe": "View in German",
+    "viewInSl": "View in Slovenian",
+    "currentLang": "🇬🇧 EN",
+    "searchPlaceholder": "Search notices...",
+    "search": "Search",
+    "read": "Read",
+    "privacyNotice": "Privacy Notice",
+    "version": "Version",
+    "latest": "latest",
+    "lastUpdated": "Last updated: {date}",
+    "whatsNew": "What's New in version {version}",
+    "contentNotAvailable": "Notice content not available.",
+    "availablePrivacyNotices": "Available Privacy Notices",
+    "archivedVersion": "Archived Version {version}",
+    "archivedVersionText": "This is an archived version of the privacy notice. View latest version",
+    "viewLatestVersion": "View latest version",
+    "outdatedTranslation": "Outdated Translation",
+    "outdatedTranslationText": "This translation is based on an older version than the Italian version. View latest Italian version",
+    "viewLatestItalianVersion": "View latest Italian version",
+    "latestVersion": "{version} (latest)"
+  },
+  "warnings": {
+    "translationUnavailable": "Translation not available",
+    "translationUnavailableDesc": "The requested translation is not yet available. Below you can find the currently available language versions for this notice."
+  },
+  "languages": {
+    "it": "Italiano",
+    "en": "English",
+    "fr": "Français",
+    "de": "Deutsch",
+    "sl": "Slovenščina"
+  }
+}

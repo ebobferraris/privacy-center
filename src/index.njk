@@ -1,0 +1,39 @@
+---
+layout: index.njk
+lang: it
+permalink: /
+---
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Smart language detection and content switching
+  (function() {
+    // Get saved language or detect from browser
+    let currentLang = sessionStorage.getItem('selectedLanguage') ||
+                     navigator.language.split('-')[0] ||
+                     'it';
+
+    // Ensure the detected language is supported
+    const supportedLanguages = {{ languages.available | map('code') | json }};
+    if (!supportedLanguages.includes(currentLang)) {
+      currentLang = '{{ languages.default }}';
+    }
+
+    // Save the detected language
+    sessionStorage.setItem('selectedLanguage', currentLang);
+
+    // If we're not on the root page, don't do anything
+    const rootPath = '{{ "/" | url }}'.replace(/\/$/, '');
+    if (window.location.pathname !== rootPath) return;
+
+    // Update the page language if different from default
+    if (currentLang !== '{{ languages.default }}') {
+      // Redirect to the appropriate language page
+      const targetPath = '{{ "/" | url }}' + currentLang + '/';
+      window.location.href = targetPath;
+    }
+
+    // If we're on root with default language, show content normally
+  })();
+});
+</script>
+

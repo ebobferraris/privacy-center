@@ -1,0 +1,52 @@
+{
+  "ui": {
+    "companyName": "PPE Corp.",
+    "copyright": "Tutti i diritti riservati.",
+    "privacyCenter": "Privacy Center",
+    "subtitle": "qui puoi trovare le informative privacy di tutti i nostri prodotti",
+    "backToHome": "← Torna alla home",
+    "selectLanguage": "Seleziona una lingua",
+    "chooseLanguage": "Scegli la lingua in cui desideri visualizzare l'informativa per {app}:",
+    "mainLanguage": "Lingua principale",
+    "translation": "Traduzione",
+    "viewInItalian": "Visualizza in Italiano",
+    "viewInEnglish": "View in English",
+    "viewInFrench": "Visualizza in Francese",
+    "viewInGerman": "Visualizza in Tedesco",
+    "viewInSlovenian": "Visualizza in Sloveno",
+    "viewInIt": "Visualizza in Italiano",
+    "viewInEn": "Visualizza in Inglese",
+    "viewInFr": "Visualizza in Francese",
+    "viewInDe": "Visualizza in Tedesco",
+    "viewInSl": "Visualizza in Sloveno",
+    "currentLang": "🇮🇹 IT",
+    "searchPlaceholder": "Cerca informative...",
+    "search": "Cerca",
+    "read": "Leggi",
+    "privacyNotice": "Informativa privacy",
+    "version": "Versione",
+    "latest": "più recente",
+    "lastUpdated": "Ultimo aggiornamento: {date}",
+    "whatsNew": "Novità nella versione {version}",
+    "contentNotAvailable": "Contenuto dell'informativa non disponibile.",
+    "availablePrivacyNotices": "Informative disponibili",
+    "archivedVersion": "Versione Archiviata {version}",
+    "archivedVersionText": "Questa è una versione archiviata dell'informativa privacy. Visualizza versione più recente",
+    "viewLatestVersion": "Visualizza versione più recente",
+    "outdatedTranslation": "Traduzione Obsoleta",
+    "outdatedTranslationText": "Questa traduzione è basata su una versione più vecchia rispetto alla versione italiana. Visualizza ultima versione italiana",
+    "viewLatestItalianVersion": "Visualizza ultima versione italiana",
+    "latestVersion": "{version} (più recente)"
+  },
+  "warnings": {
+    "translationUnavailable": "Traduzione non disponibile",
+    "translationUnavailableDesc": "La traduzione richiesta non è ancora disponibile. Di seguito trovi le versioni linguistiche attualmente disponibili per questa informativa."
+  },
+  "languages": {
+    "it": "Italiano",
+    "en": "English",
+    "fr": "Français",
+    "de": "Deutsch",
+    "sl": "Slovenščina"
+  }
+}

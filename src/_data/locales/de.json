@@ -1,0 +1,52 @@
+{
+  "ui": {
+    "companyName": "PPE Corp.",
+    "copyright": "Alle Rechte vorbehalten.",
+    "privacyCenter": "Privacy Center",
+    "subtitle": "hier finden Sie die Datenschutzhinweise aller unserer Produkte",
+    "backToHome": "← Zurück zur Startseite",
+    "selectLanguage": "Sprache auswählen",
+    "chooseLanguage": "Wählen Sie die Sprache, in der Sie die {app}-Datenschutzhinweis anzeigen möchten:",
+    "mainLanguage": "Hauptsprache",
+    "translation": "Übersetzung",
+    "viewInItalian": "Auf Italienisch anzeigen",
+    "viewInEnglish": "Auf Englisch anzeigen",
+    "viewInFrench": "Auf Französisch anzeigen",
+    "viewInGerman": "Auf Deutsch anzeigen",
+    "viewInSlovenian": "Auf Slowenisch anzeigen",
+    "viewInIt": "Auf Italienisch anzeigen",
+    "viewInEn": "Auf Englisch anzeigen",
+    "viewInFr": "Auf Französisch anzeigen",
+    "viewInDe": "Auf Deutsch anzeigen",
+    "viewInSl": "Auf Slowenisch anzeigen",
+    "currentLang": "🇩🇪 DE",
+    "searchPlaceholder": "Hinweise durchsuchen...",
+    "search": "Suchen",
+    "read": "Lesen",
+    "privacyNotice": "Datenschutzhinweis",
+    "version": "Version",
+    "latest": "neueste",
+    "lastUpdated": "Zuletzt aktualisiert: {date}",
+    "whatsNew": "Was ist neu in Version {version}",
+    "contentNotAvailable": "Inhalt der Mitteilung nicht verfügbar.",
+    "availablePrivacyNotices": "Verfügbare Datenschutzhinweise",
+    "archivedVersion": "Archivierte Version {version}",
+    "archivedVersionText": "Dies ist eine archivierte Version des Datenschutzhinweises. Neueste Version anzeigen",
+    "viewLatestVersion": "Neueste Version anzeigen",
+    "outdatedTranslation": "Veraltete Übersetzung",
+    "outdatedTranslationText": "Diese Übersetzung basiert auf einer älteren Version als der italienischen Version. Neueste italienische Version anzeigen",
+    "viewLatestItalianVersion": "Neueste italienische Version anzeigen",
+    "latestVersion": "{version} (neueste)"
+  },
+  "warnings": {
+    "translationUnavailable": "Übersetzung nicht verfügbar",
+    "translationUnavailableDesc": "Die angeforderte Übersetzung ist noch nicht verfügbar. Nachfolgend finden Sie die derzeit verfügbaren Sprachversionen für diese Mitteilung."
+  },
+  "languages": {
+    "it": "Italiano",
+    "en": "English",
+    "fr": "Français",
+    "de": "Deutsch",
+    "sl": "Slovenščina"
+  }
+}

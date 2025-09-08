@@ -1,0 +1,111 @@
+---
+layout: base.njk
+title: "Privacy Center"
+---
+
+<div class="hero">
+  <h1>{{ 'ui.privacyCenter' | t(lang) }}</h1>
+  <p>{{ 'ui.subtitle' | t(lang) }}</p>
+</div>
+
+<div class="search-section">
+  <input type="text" id="search-input" placeholder="{{ 'ui.searchPlaceholder' | t(lang) }}" class="search-input">
+  <button id="search-button" class="search-button">{{ 'ui.search' | t(lang) }}</button>
+</div>
+
+<section aria-labelledby="notices-heading">
+  <h2 id="notices-heading" class="sr-only">{{ 'ui.availablePrivacyNotices' | t(lang) }}</h2>
+  <div id="notices-list" class="notices-grid" role="grid" aria-label="Privacy notices grid">
+  {% set searchTerm = page.url | getSearchParam %}
+  {% for notice in notices %}
+  {% set shouldShow = true %}
+  {% if searchTerm %}
+    {% set titleMatch = notice.name | lower | includes(searchTerm | lower) %}
+    {% set descMatch = (notice.description or 'Privacy notice') | lower | includes(searchTerm | lower) %}
+    {% if not (titleMatch or descMatch) %}
+      {% set shouldShow = false %}
+    {% endif %}
+  {% endif %}
+
+  {% if shouldShow %}
+  <article class="notice-card" role="gridcell" aria-labelledby="notice-{{ notice.id }}-title">
+    <div class="app-header">
+      <img src="/images/icons/{{ notice.id }}-icon.svg" 
+           alt="{{ notice.name }} icon" 
+           class="app-icon"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="app-logo" aria-hidden="true" style="display: none;">{{ notice.name[0] | upper }}</div>
+    </div>
+    <h3 id="notice-{{ notice.id }}-title">{{ notice.name }}</h3>
+    <p>{{ notice.description or 'Privacy notice' }}</p>
+    <div class="notice-languages" role="group" aria-label="Available languages for {{ notice.name }}">
+      {% for lang in notice.languages | orderLanguages %}
+        {% set langName = lang | getLanguageName %}
+        <a href="{{ ('/notices/' + notice.id + '/' + lang + '/') | url }}"
+           class="lang-link {{ lang }}"
+           aria-label="Read {{ notice.name }} in {{ langName }}">{{ langName }}</a>
+      {% endfor %}
+    </div>
+    {% set currentLangAvailable = false %}
+    {% for availableLang in notice.languages %}
+      {% if availableLang == lang %}
+        {% set currentLangAvailable = true %}
+      {% endif %}
+    {% endfor %}
+
+    {% if currentLangAvailable %}
+      <a href="{{ ('/notices/' + notice.id + '/' + lang + '/') | url }}"
+         class="view-details"
+         aria-label="Read {{ notice.name }} privacy notice">{{ 'ui.read' | t(lang) }}</a>
+    {% else %}
+      <a href="{{ ('/notices/' + notice.id + '/') | url }}"
+         class="view-details"
+         aria-label="Read {{ notice.name }} privacy notice">{{ 'ui.read' | t(lang) }}</a>
+    {% endif %}
+  </article>
+  {% endif %}
+  {% endfor %}
+
+  {% if searchTerm and notices %}
+    {% set visibleCount = 0 %}
+    {% for notice in notices %}
+      {% set titleMatch = notice.name | lower | includes(searchTerm | lower) %}
+      {% set descMatch = (notice.description or 'Privacy notice') | lower | includes(searchTerm | lower) %}
+      {% if titleMatch or descMatch %}
+        {% set visibleCount = visibleCount + 1 %}
+      {% endif %}
+    {% endfor %}
+
+    {% if visibleCount == 0 %}
+    <div class="no-results" role="status" aria-live="polite">
+      <p>No notices found matching "{{ searchTerm }}"</p>
+      <a href="{{ '/' | url }}" class="view-details" aria-label="Clear search and show all notices">Clear search</a>
+    </div>
+    {% endif %}
+  {% endif %}
+  </div>
+</section>
+
+<!-- Homepage-specific language redirect logic -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Check for saved language and redirect (only if no search query)
+  const urlParams = new URLSearchParams(window.location.search);
+  if (!urlParams.has('search')) {
+    const savedLang = sessionStorage.getItem('selectedLanguage');
+    const currentPath = window.location.pathname;
+
+    if (savedLang && savedLang !== 'it') {
+      const targetPath = '{{ "/" | url }}' + savedLang + '/';
+      if (currentPath !== targetPath) {
+        window.location.href = targetPath;
+      }
+    } else {
+      const targetPath = '{{ "/it/" | url }}';
+      if (currentPath !== targetPath) {
+        window.location.href = targetPath;
+      }
+    }
+  }
+});
+</script>

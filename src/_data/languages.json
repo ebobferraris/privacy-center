@@ -1,0 +1,30 @@
+{
+  "default": "it",
+  "available": [
+    {
+      "code": "it",
+      "name": "Italiano",
+      "nativeName": "Italiano"
+    },
+    {
+      "code": "en",
+      "name": "English",
+      "nativeName": "English"
+    },
+    {
+      "code": "fr",
+      "name": "Français",
+      "nativeName": "Français"
+    },
+    {
+      "code": "de",
+      "name": "Deutsch",
+      "nativeName": "Deutsch"
+    },
+    {
+      "code": "sl",
+      "name": "Slovenian",
+      "nativeName": "Slovenščina"
+    }
+  ]
+}

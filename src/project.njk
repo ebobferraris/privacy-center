@@ -1,0 +1,14 @@
+---
+layout: project.njk
+
+pagination:
+  data: collections.projects
+  size: 1
+  alias: project
+
+eleventyComputed:
+  title: "{{ (notices | findNotice(project)).name }} - Privacy Notice"
+  permalink: "/notices/{{ project.id }}/index.html"
+  project: "{{ project.id }}"
+  lang: "it"
+---

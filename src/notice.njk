@@ -1,0 +1,18 @@
+---
+layout: notice.njk
+
+pagination:
+  data: collections.allNotices
+  size: 1
+  alias: notice
+
+permalink: false
+
+eleventyComputed:
+  title: "{{ (notices | findNotice(project)).name }} - {{ notice.lang | getLanguageName }}"
+  permalink: "{{ notice.url }}"
+  project: "{{ notice.project }}"
+  lang: "{{ notice.lang }}"
+---
+
+{{ notice.content | markdown }}

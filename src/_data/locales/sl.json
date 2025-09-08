@@ -1,0 +1,52 @@
+{
+  "ui": {
+    "companyName": "PPE Corp.",
+    "copyright": "Vse pravice pridržane.",
+    "privacyCenter": "Privacy Center",
+    "subtitle": "tukaj najdete obvestila o zasebnosti vseh naših izdelkov",
+    "backToHome": "← Nazaj na domačo stran",
+    "selectLanguage": "Izberite jezik",
+    "chooseLanguage": "Izberite jezik, v katerem želite pregledati obvestilo o zasebnosti {app}:",
+    "mainLanguage": "Glavni jezik",
+    "translation": "Prevod",
+    "viewInItalian": "Ogled v italijanščini",
+    "viewInEnglish": "Ogled v angleščini",
+    "viewInFrench": "Ogled v francoščini",
+    "viewInGerman": "Ogled v nemščini",
+    "viewInSlovenian": "Ogled v slovenščini",
+    "viewInIt": "Prikaži v Italijanščini",
+    "viewInEn": "Prikaži v Angleščini",
+    "viewInFr": "Prikaži v Francoščini",
+    "viewInDe": "Prikaži v Nemščini",
+    "viewInSl": "Prikaži v Slovenščini",
+    "currentLang": "🇸🇮 SL",
+    "searchPlaceholder": "Iskanje obvestil...",
+    "search": "Iskanje",
+    "read": "Preberi",
+    "privacyNotice": "Obvestilo o zasebnosti",
+    "version": "Različica",
+    "latest": "najnovejša",
+    "lastUpdated": "Zadnja posodobitev: {date}",
+    "whatsNew": "Kaj je novega v različici {version}",
+    "contentNotAvailable": "Vsebina obvestila ni na voljo.",
+    "availablePrivacyNotices": "Razpoložljiva Obvestila o Zasebnosti",
+    "archivedVersion": "Arhivirana Različica {version}",
+    "archivedVersionText": "To je arhivirana različica obvestila o zasebnosti. Prikaži najnovejšo različico",
+    "viewLatestVersion": "Prikaži najnovejšo različico",
+    "outdatedTranslation": "Zastarel Prevod",
+    "outdatedTranslationText": "Ta prevod temelji na starejši različici kot italijanska različica. Prikaži najnovejšo italijansko različico",
+    "viewLatestItalianVersion": "Prikaži najnovejšo italijansko različico",
+    "latestVersion": "{version} (najnovejša)"
+  },
+  "warnings": {
+    "translationUnavailable": "Prevod ni na voljo",
+    "translationUnavailableDesc": "Zahtevani prevod še ni na voljo. Spodaj najdete trenutno razpoložljive jezikovne različice za to obvestilo."
+  },
+  "languages": {
+    "it": "Italiano",
+    "en": "English",
+    "fr": "Français",
+    "de": "Deutsch",
+    "sl": "Slovenščina"
+  }
+}

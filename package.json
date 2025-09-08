@@ -1,0 +1,26 @@
+{
+  "name": "privacy-center",
+  "version": "1.0.0",
+  "description": "Privacy notice management system",
+  "scripts": {
+    "build": "npm run copy-icons && npm run process-versions && npm run generate-translations && eleventy",
+    "start": "npm run copy-icons && npm run process-versions && npm run generate-translations && eleventy --serve",
+    "dev": "NODE_ENV=development npm run copy-icons && npm run process-versions && npm run generate-translations && eleventy --serve --watch",
+    "copy-icons": "node scripts/copy-icons.js",
+    "generate-translations": "node scripts/generate-translations.js",
+    "version-manager": "node scripts/version-manager.js",
+    "process-versions": "node scripts/version-manager.js --process-all",
+    "check-status": "node scripts/version-manager.js --check-status",
+    "ci-prepare": "npm run process-versions && npm run check-status"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "luxon": "^3.4.4",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.1",
+    "gray-matter": "^4.0.3"
+  }
+}

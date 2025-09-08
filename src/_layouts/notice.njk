@@ -1,0 +1,98 @@
+---
+layout: base.njk
+eleventyComputed:
+  title: "{{ (notices | findNotice(project)).name }} - {{ 'ui.privacyNotice' | t(lang) }} ({{ lang | getLanguageName }})"
+  permalink: "/notices/{{ project }}/{{ lang }}/index.html"
+---
+
+{% set noticeId = project %}
+{% set currentLang = lang %}
+{% set noticeData = notices | findNotice(noticeId) %}
+
+{# Check if the requested language version exists #}
+{% if not noticeData.available_languages[currentLang] %}
+  {# Language version doesn't exist, redirect to project page #}
+  <div data-redirect-to="{{ ("/notices/" + project + "/") | url }}" class="redirect-notice">
+    <p>Redirecting to project page...</p>
+  </div>
+{% endif %}
+
+{% set langVersions = noticeData.available_languages[currentLang] %}
+{% set currentVersion = langVersions | findVersion(page.url) %}
+{% set noticeContent = currentVersion.content %}
+
+<div class="notice-header">
+  <h1>{{ noticeData.name }} - {{ 'ui.privacyNotice' | t(lang) }} ({{ lang | getLanguageName }})</h1>
+  <a href="{{ '/' | url }}" class="back-link" data-translate="ui.backToHome">{{ 'ui.backToHome' | t(lang) }}</a>
+</div>
+
+<div class="version-controls">
+  <div class="version-selector">
+    <div class="version-row">
+      <div class="version-left">
+        <label for="version-select" data-translate="ui.version">{{ 'ui.version' | t(lang) }}:</label>
+        <select id="version-select" data-latest-version="{{ langVersions | findLatestVersion }}">
+          {% set latestVersion = null %}
+          {% for version in langVersions %}
+            {% if version.isLatest %}
+              {% set latestVersion = version.version %}
+              <option value="{{ version.version }}" {% if currentVersion.version == version.version %}selected{% endif %} data-translate="ui.latestVersion" data-translate-params='{"version": "{{ version.version }}"}'>
+                {{ version.version }} ({{ 'ui.latest' | t(lang) }})
+              </option>
+            {% endif %}
+          {% endfor %}
+          {% for version in langVersions %}
+            {% if not version.isLatest and version.version != latestVersion %}
+              <option value="{{ version.version }}" {% if currentVersion.version == version.version %}selected{% endif %}>
+                {{ version.version }}
+              </option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+      {% if currentVersion.last_updated %}
+      <div class="version-right">
+        <span class="last-updated" data-translate="ui.lastUpdated" data-translate-params='{"date": "{{ currentVersion.last_updated }}"}'>{{ 'ui.lastUpdated' | t(lang) }}: {{ currentVersion.last_updated }}</span>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% if not currentVersion.isLatest %}
+<div class="version-info archived-version">
+  <div class="version-banner">
+    <h3 data-translate="ui.archivedVersion" data-translate-params='{"version": "{{ currentVersion.version }}"}'>Archived Version {{ currentVersion.version }}</h3>
+    <p data-translate="ui.archivedVersionText">This is an archived version of the privacy notice. <a href="/notices/{{ project }}/{{ lang }}/" data-translate="ui.viewLatestVersion">View latest version</a></p>
+  </div>
+</div>
+{% endif %}
+
+{% if noticeData | isTranslationObsolete(lang) and currentVersion.isLatest %}
+<div class="version-info obsolete-translation">
+  <div class="version-banner obsolete-banner">
+    <h3 data-translate="ui.outdatedTranslation">Outdated Translation</h3>
+    <p data-translate="ui.outdatedTranslationText">This translation is based on an older version than the Italian version. <a href="/notices/{{ project }}/it/" data-translate="ui.viewLatestItalianVersion">View latest Italian version</a></p>
+  </div>
+</div>
+{% endif %}
+
+{% if currentVersion.whats_new %}
+<div class="whats-new-box">
+  <h3>{{ 'ui.whatsNew' | t(lang, {version: currentVersion.version}) }}</h3>
+  <div class="whats-new-content">
+    {{ currentVersion.whats_new | markdown | safe }}
+  </div>
+</div>
+{% endif %}
+
+<div class="notice-content">
+  <div id="notice-content">
+    {% if noticeContent %}
+      {{ noticeContent | markdown | safe }}
+    {% else %}
+      <p>{{ 'ui.contentNotAvailable' | t(lang) }}</p>
+    {% endif %}
+  </div>
+</div>
+

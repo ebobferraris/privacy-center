@@ -1,0 +1,81 @@
+---
+layout: base.njk
+eleventyComputed:
+  title: "{{ (notices | findNotice(project)).name }} - Privacy Notice"
+  permalink: "/notices/{{ project }}/index.html"
+---
+
+{% set noticeId = project %}
+{% set currentLang = lang %}
+{% set noticeData = notices | findNotice(noticeId) %}
+
+<div class="notice-header">
+  <h1>{{ noticeData.name }} - <span data-translate="ui.privacyNotice">{{ 'ui.privacyNotice' | t(lang) }}</span></h1>
+  <a href="{{ '/' | url }}" class="back-link" data-translate="ui.backToHome">{{ 'ui.backToHome' | t(lang) }}</a>
+</div>
+
+<!-- Warning banner for unavailable translations -->
+<div id="translation-warning" class="translation-warning" style="display: none;">
+  <strong data-translate="warnings.translationUnavailable">{{ 'warnings.translationUnavailable' | t(lang) }}</strong>
+  <p data-translate="warnings.translationUnavailableDesc">{{ 'warnings.translationUnavailableDesc' | t(lang) }}</p>
+</div>
+
+<div class="notice-content">
+  <div class="notice-placeholder">
+    <h2 data-translate="ui.selectLanguage">{{ 'ui.selectLanguage' | t(lang) }}</h2>
+    <p data-translate="ui.chooseLanguage">{{ 'ui.chooseLanguage' | t(lang, {app: noticeData.name}) }}</p>
+
+    <div class="languages-grid">
+      {# Prima mostra la lingua principale #}
+      {% set mainLang = noticeData.main_language %}
+      {% if mainLang in noticeData.languages %}
+        {% set langName = mainLang | getLanguageName %}
+        <div class="language-card">
+          <h3>{{ langName }}</h3>
+          <p data-translate="ui.mainLanguage">
+            {{ 'ui.mainLanguage' | t(lang) }}
+          </p>
+          <a href="{{ ('/notices/' + project + '/' + mainLang + '/') | url }}" class="view-notice" data-translate="ui.viewIn{{ mainLang | capitalize }}">
+            {% if mainLang == 'it' %}
+              {{ 'ui.viewInItalian' | t(lang) }}
+            {% elif mainLang == 'en' %}
+              {{ 'ui.viewInEnglish' | t(lang) }}
+            {% elif mainLang == 'fr' %}
+              {{ 'ui.viewInFrench' | t(lang) }}
+            {% elif mainLang == 'de' %}
+              {{ 'ui.viewInGerman' | t(lang) }}
+            {% elif mainLang == 'sl' %}
+              {{ 'ui.viewInSlovenian' | t(lang) }}
+            {% endif %}
+          </a>
+        </div>
+      {% endif %}
+      
+      {# Poi mostra le altre lingue (escludendo quella principale) in ordine corretto #}
+      {% for langCode in noticeData.languages | orderLanguages %}
+        {% if langCode != noticeData.main_language %}
+          {% set langName = langCode | getLanguageName %}
+          <div class="language-card">
+            <h3>{{ langName }}</h3>
+            <p data-translate="ui.translation">
+              {{ 'ui.translation' | t(lang) }}
+            </p>
+            <a href="{{ ('/notices/' + project + '/' + langCode + '/') | url }}" class="view-notice" data-translate="ui.viewIn{{ langCode | capitalize }}">
+              {% if langCode == 'it' %}
+                {{ 'ui.viewInItalian' | t(lang) }}
+              {% elif langCode == 'en' %}
+                {{ 'ui.viewInEnglish' | t(lang) }}
+              {% elif langCode == 'fr' %}
+                {{ 'ui.viewInFrench' | t(lang) }}
+              {% elif langCode == 'de' %}
+                {{ 'ui.viewInGerman' | t(lang) }}
+              {% elif langCode == 'sl' %}
+                {{ 'ui.viewInSlovenian' | t(lang) }}
+              {% endif %}
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
