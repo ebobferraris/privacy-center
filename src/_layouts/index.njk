@@ -30,7 +30,7 @@ title: "Privacy Center"
   {% if shouldShow %}
   <article class="notice-card" role="gridcell" aria-labelledby="notice-{{ notice.id }}-title">
     <div class="app-header">
-      <img src="/images/icons/{{ notice.id }}-icon.svg" 
+      <img src="{{ ('/images/icons/' + notice.id + '-icon.svg') | url }}"
            alt="{{ notice.name }} icon" 
            class="app-icon"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">

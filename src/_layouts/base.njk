@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if title %}{{ title }} - {% endif %}{{ 'ui.companyName' | t(lang) }}</title>
   <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
+  <script src="{{ '/js/translations.js' | url }}" defer></script>
+  <script src="{{ '/js/main.js' | url }}" defer></script>
 </head>
 <body>
   <header class="header">
@@ -40,8 +42,5 @@
       <p>&copy; 2025 {{ 'ui.companyName' | t(lang) }}. {{ 'ui.copyright' | t(lang) }}</p>
     </div>
   </footer>
-
-              <script src="{{ '/js/translations.js' | url }}" defer></script>
-              <script src="{{ '/js/main.js' | url }}" defer></script>
 </body>
 </html>

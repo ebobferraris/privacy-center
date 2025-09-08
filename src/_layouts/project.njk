@@ -5,7 +5,7 @@ eleventyComputed:
   permalink: "/notices/{{ project }}/index.html"
 ---
 
-{% set noticeId = project %}
+{% set noticeId = project.id %}
 {% set currentLang = lang %}
 {% set noticeData = notices | findNotice(noticeId) %}
 
