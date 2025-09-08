@@ -1,10 +1,11 @@
 ---
 title: "Informativa Privacy per App3"
-date: 2025-09-01
-version: "1.0"
-last_updated: "2025-09-01"
+version: "1.1"
+last_updated: "2025-09-08"
 based_on_version: "1.0"
 language: "it"
+whats_new: |
+  - Informative automagiche
 ---
 
 # Informativa sulla Privacy
