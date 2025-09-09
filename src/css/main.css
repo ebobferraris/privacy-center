@@ -803,3 +803,14 @@ body {
     min-width: 150px;  /* Compact dropdown for landscape */
   }
 }
+
+/* Translation states - prevent FOUC */
+.translating {
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.translated {
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
+}

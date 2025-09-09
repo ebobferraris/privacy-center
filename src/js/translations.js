@@ -521,7 +521,10 @@ langManager.subscribe((newLang) => {
 
 // Initialize translations on page load
 document.addEventListener('DOMContentLoaded', function() {
-  
+
+  // Hide content during translation to prevent FOUC
+    document.body.classList.add('translating');
+
   // Wait a bit to ensure all scripts are loaded
   setTimeout(() => {
     try {
@@ -563,6 +566,9 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         } catch (error) {
           console.error('Error updating translatable element:', error);
+          // Show content even if there's an error
+          document.body.classList.remove('translating');
+          document.body.classList.add('translated');
         }
       });
       
