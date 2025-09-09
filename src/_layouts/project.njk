@@ -23,7 +23,7 @@ eleventyComputed:
 <div class="notice-content">
   <div class="notice-placeholder">
     <h2 data-translate="ui.selectLanguage">{{ 'ui.selectLanguage' | t(lang) }}</h2>
-    <p data-translate="ui.chooseLanguage">{{ 'ui.chooseLanguage' | t(lang, {app: noticeData.name}) }}</p>
+    <p data-translate="ui.chooseLanguage" data-translate-params='{"app": "{{ noticeData.name }}"}'>{{ 'ui.chooseLanguage' | t(lang) }}: {{ currentVersion.last_updated }}</p>
 
     <div class="languages-grid">
       {# Prima mostra la lingua principale #}

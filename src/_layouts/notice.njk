@@ -62,8 +62,8 @@ eleventyComputed:
 {% if not currentVersion.isLatest %}
 <div class="version-info archived-version">
   <div class="version-banner">
-    <h3 data-translate="ui.archivedVersion" data-translate-params='{"version": "{{ currentVersion.version }}"}'>Archived Version {{ currentVersion.version }}</h3>
-    <p data-translate="ui.archivedVersionText">This is an archived version of the privacy notice. <a href="/notices/{{ project }}/{{ lang }}/" data-translate="ui.viewLatestVersion">View latest version</a></p>
+    <h3 data-translate="ui.archivedVersion" data-translate-params='{"version": "{{ currentVersion.version }}"}'>{{ 'currentVersion.version' | t(lang) }}</h3>
+    <p data-translate="ui.archivedVersionText">{{ 'ui.archivedVersionText' | t(lang) }}. <a href="{{ ('/notices/' + project + '/' + lang + '/') | url }}" data-translate="ui.viewLatestVersion">{{ 'ui.viewLatestVersion' | t(lang) }}</a></p>
   </div>
 </div>
 {% endif %}
@@ -71,8 +71,8 @@ eleventyComputed:
 {% if noticeData | isTranslationObsolete(lang) and currentVersion.isLatest %}
 <div class="version-info obsolete-translation">
   <div class="version-banner obsolete-banner">
-    <h3 data-translate="ui.outdatedTranslation">Outdated Translation</h3>
-    <p data-translate="ui.outdatedTranslationText">This translation is based on an older version than the Italian version. <a href="/notices/{{ project }}/it/" data-translate="ui.viewLatestItalianVersion">View latest Italian version</a></p>
+    <h3 data-translate="ui.outdatedTranslation">{{ 'ui.outdatedTranslation' | t(lang) }}</h3>
+    <p data-translate="ui.outdatedTranslationText">{{ 'ui.outdatedTranslationText' | t(lang) }}. <a href="{{ ('/notices/' + project + '/it/') | url }}" data-translate="ui.viewLatestItalianVersion">{{ 'ui.viewLatestItalianVersion' | t(lang) }}</a></p>
   </div>
 </div>
 {% endif %}

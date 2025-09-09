@@ -30,7 +30,7 @@
     "whatsNew": "Was ist neu in Version {version}",
     "contentNotAvailable": "Inhalt der Mitteilung nicht verfügbar.",
     "availablePrivacyNotices": "Verfügbare Datenschutzhinweise",
-    "archivedVersion": "Archivierte Version {version}",
+    "archivedVersion": "Archivierte Version",
     "archivedVersionText": "Dies ist eine archivierte Version des Datenschutzhinweises. Neueste Version anzeigen",
     "viewLatestVersion": "Neueste Version anzeigen",
     "outdatedTranslation": "Veraltete Übersetzung",
