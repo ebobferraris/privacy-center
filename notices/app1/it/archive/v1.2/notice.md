@@ -1,9 +1,9 @@
 ---
-title: "Informativa Privacy per App1"
-version: "1.2"
+title: Informativa Privacy per App1
+version: '1.2'
 isLatest: false
-last_updated: "2025-01-01"
-based_on_version: "1.0"
+last_updated: '2025-01-01'
+based_on_version: '1.0'
 whats_new: |
   - Migliorate le misure di sicurezza dei dati con crittografia end-to-end
   - Aggiunta gestione del consenso utente per l'elaborazione dei dati
